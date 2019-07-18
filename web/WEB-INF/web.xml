@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <filter>
+        <filter-name>encodingfilter</filter-name>
+        <filter-class>com.filter.Encodingfilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingfilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.filter.loginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/goodInsertServlet</url-pattern>
+        <url-pattern>/goodQueryServlet</url-pattern>
+        <url-pattern>/goodDeleteServlet</url-pattern>
+        <url-pattern>/goodLoadDataServlet</url-pattern>
+        <url-pattern>/goodUpdateServlet</url-pattern>
+        <url-pattern>/good_list.jsp</url-pattern>
+        <url-pattern>/good_save.jsp</url-pattern>
+        <url-pattern>/good_update.jsp</url-pattern>
+        <url-pattern>/good_detail.jsp</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.Servlet.loginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registerServlet</servlet-name>
+        <servlet-class>com.Servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registerServlet</servlet-name>
+        <url-pattern>/registerServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>goodInsertServlet</servlet-name>
+        <servlet-class>com.Servlet.GoodInsertServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>goodInsertServlet</servlet-name>
+        <url-pattern>/goodInsertServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>goodQueryServlet</servlet-name>
+        <servlet-class>com.Servlet.GoodQueryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>goodQueryServlet</servlet-name>
+        <url-pattern>/goodQueryServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>goodDeleteServlet</servlet-name>
+        <servlet-class>com.Servlet.GoodDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>goodDeleteServlet</servlet-name>
+        <url-pattern>/goodDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>goodLoadDataServlet</servlet-name>
+        <servlet-class>com.Servlet.GoodLoadDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>goodLoadDataServlet</servlet-name>
+        <url-pattern>/goodLoadDataServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>goodUpdateServlet</servlet-name>
+        <servlet-class>com.Servlet.GoodUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>goodUpdateServlet</servlet-name>
+        <url-pattern>/goodUpdateServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

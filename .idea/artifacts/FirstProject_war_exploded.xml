@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="FirstProject:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/FirstProject_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="FirstProject/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="FirstProject" />
+          <element id="library" level="application" name="apache-tomcat-8.5" />
+          <element id="library" level="application" name="apache-tomcat-8.51" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jstl/taglibs-standard-compat-1.2.5.jar" />
+          <element id="file-copy" path="D:/tools/22.Java Web/doc/apache-tomcat-8.5.30-windows-x64.zip" />
+          <element id="library" level="project" name="db" />
+          <element id="library" level="project" name="fileupload" />
+          <element id="library" level="project" name="junit4" />
+          <element id="library" level="project" name="jstl1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
