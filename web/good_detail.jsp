@@ -19,6 +19,7 @@
             font-family: SimSun;
             color: gold;
             background-color: #336666;
+            text-align: center;
         }
     </style>
 </head>
