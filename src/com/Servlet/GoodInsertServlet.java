@@ -79,10 +79,7 @@ public class GoodInsertServlet extends HttpServlet {
                                 throw new RuntimeException("商品价格不能负数");
                             }
                             goodsInfo.setGoodsInfo_price(Double.parseDouble(fileItem.getString()));
-                        }else if("goodsInfo_description".equals(fieldName)){
-                            if(fileItem.getString("utf-8") == null || "".equals(fileItem.getString("utf-8"))){
-                                throw new RuntimeException("商品描述不能为空");
-                            }
+                        }else if("goodsInfo_description".equals(fieldName)){//
                             goodsInfo.setGoodsInfo_description(fileItem.getString("utf-8"));
                         }else if("goods_stock".equals(fieldName)){
                             if(fileItem.getString() == null || "".equals(fileItem.getString())){
@@ -94,20 +91,24 @@ public class GoodInsertServlet extends HttpServlet {
                             goodsInfo.setGoods_stock(Integer.parseInt(fileItem.getString()));
                         }
                     }else {
-                        String fileName = fileItem.getName();
-                        if(fileName == null || "".equals(fileName)){
-                            throw new RuntimeException("添加图片不能为空");
+                        try {
+                            String fileName = fileItem.getName();
+                            if(fileName == null || "".equals(fileName)){
+                                throw new RuntimeException("添加图片不能为空");
+                            }
+                            String parentPath = req.getServletContext().getRealPath("/upload");
+                            File parentFile = new File(parentPath);
+                            if(!parentFile.exists()) parentFile.mkdirs();
+                            File newFile = new File(parentFile,fileName);
+                            InputStream is = fileItem.getInputStream();
+                            OutputStream os = new FileOutputStream(newFile);
+                            IOUtils.copy(is,os);
+                            os.close();
+                            is.close();
+                            goodsInfo.setGoodsInfo_pic(fileName);
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
-                        String parentPath = req.getServletContext().getRealPath("/upload");
-                        File parentFile = new File(parentPath);
-                        if(!parentFile.exists()) parentFile.mkdirs();
-                        File newFile = new File(parentFile,fileName);
-                        InputStream is = fileItem.getInputStream();
-                        OutputStream os = new FileOutputStream(newFile);
-                        IOUtils.copy(is,os);
-                        os.close();
-                        is.close();
-                        goodsInfo.setGoodsInfo_pic(fileName);
                     }
                 }
             }
