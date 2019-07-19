@@ -14,18 +14,25 @@
             window.location.href = "register.jsp";
         }
     </script>
+    <style type="text/css">
+        *{
+            font-family: SimSun;
+            color: gold;
+            background-color: #336666;
+        }
+    </style>
 </head>
 <body>
 <form action="loginServlet" method="post">
-    <table border="1" style="width:300px;height:50px;margin: 0 auto">
+    <table border="2" style="width:300px;height:50px;margin: 0 auto">
         <caption style="font-weight: bold;font-size: 20px">用户登录</caption>
         <tr>
             <th>用户名</th>
-            <td><input type="text" name="username" style="border: none"/></td>
+            <td><input type="text" name="username" style="border: none;background-color: #336666"/></td>
         </tr>
         <tr>
             <th>密码</th>
-            <td><input type="password" name="password" style="border: none"/></td>
+            <td><input type="password" name="password" style="border: none;background-color: #336666"/></td>
         </tr>
         <tr>
             <td colspan="2" style="text-align: center">

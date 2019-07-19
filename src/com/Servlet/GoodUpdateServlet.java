@@ -70,9 +70,8 @@ public class GoodUpdateServlet extends HttpServlet {
                         if("goodsInfo_name".equals(fieldName)){
                             if(fileItem.getString("utf-8") == null || "".equals(fileItem.getString("utf-8"))){
                                 throw new RuntimeException("商品名称不能为空");
-                            }else {
-                                goodsInfo.setGoodsInfo_name(fileItem.getString("utf-8"));
                             }
+                            goodsInfo.setGoodsInfo_name(fileItem.getString("utf-8"));
                         }else if("goodsInfo_price".equals(fieldName)){
                             if(fileItem.getString() == null || "".equals(fileItem.getString())){
                                 throw new RuntimeException("商品价格不能为空");
@@ -82,11 +81,7 @@ public class GoodUpdateServlet extends HttpServlet {
                             }
                             goodsInfo.setGoodsInfo_price(Double.parseDouble(fileItem.getString()));
                         }else if("goodsInfo_description".equals(fieldName)){
-                            if(fileItem.getString("utf-8") == null || "".equals(fileItem.getString("utf-8"))){
-                                throw new RuntimeException("商品描述不能为空");
-                            }else {
                                 goodsInfo.setGoodsInfo_description(fileItem.getString("utf-8"));
-                            }
                         }else if("goods_stock".equals(fieldName)) {
                             if (fileItem.getString() == null || "".equals(fileItem.getString())) {
                                 throw new RuntimeException("商品库存不能为空");

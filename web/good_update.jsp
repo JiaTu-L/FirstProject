@@ -31,6 +31,11 @@
         input{
             text-align: center;
         }
+        *{
+            font-family: SimSun;
+            color: gold;
+            background-color: #336666;
+        }
     </style>
 </head>
 <body>
@@ -38,7 +43,7 @@
 <form action="goodUpdateServlet" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="${goods.id}"/>
     <table border="1" style="width: 400px;height: 50px;margin:0 auto;text-align: center">
-        <caption style="font-weight: bold;font-size: 20px">商品修改</caption>
+        <caption style="font-weight: bold;font-size: 40px">商品修改</caption>
         <tr>
             <th>商品名字</th>
             <td><input type="text" name="goodsInfo_name" value="${goods.goodsInfo_name}" style="border: none"/></td>

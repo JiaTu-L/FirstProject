@@ -14,20 +14,27 @@
         window.location.href = "goodQueryServlet";
     }
 </script>
+    <style type="text/css">
+        *{
+            font-family: SimSun;
+            color: gold;
+            background-color: #336666;
+        }
+    </style>
 </head>
 <body>
 <div style="width: 300px;margin:0 auto">
 <input type="hidden" name="id" value="${goods.id}"/>
 <table border="1" style="width: 300px;height: 50px;margin:0 auto">
-    <caption style="font-weight: bold;font-size: 20px">商品详情</caption>
+    <caption style="font-weight: bold;font-size: 40px">商品详情</caption>
     <tr>
         <th>商品名字</th>
         <td>${goods.goodsInfo_name}</td>
     </tr>
     <tr>
         <th>商品图片</th>
-        <td>
-            <img src="/upload/${goods.goodsInfo_pic}" width="200px" height="165px" />
+        <td width="250px" height="250px">
+            <img src="/upload/${goods.goodsInfo_pic}" width="250px" height="250px" />
         </td>
     </tr>
     <tr>

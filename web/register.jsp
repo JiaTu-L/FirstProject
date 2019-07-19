@@ -14,6 +14,13 @@
             window.location.href = "login.jsp";
         }
     </script>
+    <style type="text/css">
+        *{
+            font-family: SimSun;
+            color: gold;
+            background-color: #336666;
+        }
+    </style>
 </head>
 <body>
 <form action="registerServlet" method="post">

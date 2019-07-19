@@ -17,11 +17,12 @@
     </filter-mapping>
 
     <filter>
-        <filter-name>loginFilter</filter-name>
-        <filter-class>com.filter.loginFilter</filter-class>
+        <filter-name>authFilter</filter-name>
+        <filter-class>com.filter.AuthFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>loginFilter</filter-name>
+        <filter-name>authFilter</filter-name>
+        <!--<url-pattern>/*</url-pattern>-->
         <url-pattern>/goodInsertServlet</url-pattern>
         <url-pattern>/goodQueryServlet</url-pattern>
         <url-pattern>/goodDeleteServlet</url-pattern>

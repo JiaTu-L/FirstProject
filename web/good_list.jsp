@@ -27,11 +27,18 @@
             window.location.href = "login.jsp";
         }
     </script>
+    <style type="text/css">
+        *{
+            font-family: SimSun;
+            color: white;
+            background-color: #336666;
+        }
+    </style>
 </head>
 <body>
 <div style="width: 900px;height: 200px;margin:0 auto">
 <table border="1" style="width: 900px;height: 50px;margin:0 auto;text-align: center">
-    <caption style="font-weight: bold;font-size: 20px">商品列表</caption>
+    <caption style="font-weight: bold;font-size: 40px">商品列表</caption>
     <tr>
         <th>序号</th>
         <th>商品名字</th>
